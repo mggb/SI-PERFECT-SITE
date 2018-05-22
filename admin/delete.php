@@ -12,13 +12,22 @@ require_once 'connection.php';
 <body>
 <?php
 $edit =" SELECT         
-           `id`, `slug`, `title`, `h1`, `p`, `span-class`, `span-text`, `img-alt`, `img-src`, `nav-title`
+           `id`, 
+           `title`, 
+           `image`, 
+           `categorie`, 
+           `SousCategorie`, 
+           `Lieux`, 
+           `description`, 
+           `auteur`, 
+           `date`, 
+           `imgAlt`
            FROM
-            `page`
+            `article`
             WHERE
             `id`= :id
             
-            ;"; /* on  recupere les donnée id competence intitulé resume dateStart et datefinish de tableau Mysql 'anonce'*/
+            ;";
 $stmt = $pdo->prepare($edit);
 $stmt->bindValue(':id', $_GET['id']);
 $stmt->execute();
