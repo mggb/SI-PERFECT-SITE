@@ -1,5 +1,5 @@
 <?php
-require_once 'connection.php';
+require_once '../connection.php';
 $update = "UPDATE
 `article`
 SET
@@ -27,4 +27,4 @@ $stmt->bindValue(':auteur', $_POST['auteur']);
 $stmt->bindValue(':date', $_POST['date']);
 $stmt->bindValue(':imgAlt', $_POST['imgAlt']);
 $stmt->execute();
-header('Location: show.php');
+header('Location: ../show.php');

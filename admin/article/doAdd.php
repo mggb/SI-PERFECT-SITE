@@ -1,5 +1,5 @@
 <?php
-require_once 'connection.php';
+require_once '../connection.php';
 
 if (!empty($_POST['submit'])) {
     $addform = "INSERT INTO `article` 
@@ -37,4 +37,4 @@ if (!empty($_POST['submit'])) {
     $stmt->bindValue(':auteur', $_POST['auteur']);
     $stmt->execute();
 }
-var_dump($_POST);
+header('Location: ../show.php');

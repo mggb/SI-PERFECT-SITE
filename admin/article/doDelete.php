@@ -5,9 +5,9 @@ if (!isset($_POST['id'])) {
     header("Location: index.php?error=noidtodelete");
     exit;
 }
-require_once "connection.php";
+require_once "../connection.php";
 $delete = "DELETE FROM 
-  `boiteimage` 
+  `article` 
 WHERE 
   `id` = :id
 ;";
@@ -16,4 +16,4 @@ $stmt->bindValue(':id', $_POST['id']);
 $stmt->execute();
 header('Location: show.php');
 errorHandler($stmt);
-header("Location: show.php");
+header("Location: ../show.php");

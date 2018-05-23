@@ -1,6 +1,6 @@
 <?php
 var_dump($_POST);
-require_once 'connection.php';
+require_once '../connection.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">

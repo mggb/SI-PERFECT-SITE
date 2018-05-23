@@ -1,5 +1,5 @@
 <?php
-require_once 'connection.php';
+require_once '../connection.php';
 
 if (!empty($_POST['submit'])) {
     $addform = "INSERT INTO `boiteimage` 
@@ -19,4 +19,4 @@ if (!empty($_POST['submit'])) {
     $stmt->bindValue(':description', $_POST['description']);
     $stmt->execute();
 }
-header('Location: show.php');
+header('Location: ../show.php');

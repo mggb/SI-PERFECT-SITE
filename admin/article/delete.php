@@ -1,5 +1,5 @@
 <?php
-require_once 'connection.php';
+require_once '../connection.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,14 +33,14 @@ $stmt->bindValue(':id', $_GET['id']);
 $stmt->execute();
 ?>
 <a href="index.php">retourner vers la page admin</a>
-<a href="show.php">retourner vers la page show</a>
+<a href="../show.php">retourner vers la page show</a>
 <?php if (false !== $row = $stmt->fetch(PDO::FETCH_ASSOC)) :?>
     tu est sur de vouloir suprimé la page de <?=$row["title"]?>
 <form  action="doDelete.php" method="post">
     <input  id="prodId" name="id" type="hidden" value="<?=$row["id"]?>">
     <input type="submit" name="submit" value="Oui" class="envoie">
 </form>
-    <a href="show.php">non</a>
+    <a href="../show.php">non</a>
 <?php endif;?>
 </body>
 </html>
