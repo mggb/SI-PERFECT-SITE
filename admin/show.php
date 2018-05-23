@@ -78,4 +78,31 @@ $stmt->execute();
     <?php endwhile;?> <!- on ferme la balise php et on fini la condition tant que ->
     </p><a href="adminBoite/add.php">ajouter une image pour la boite a image</a>
 </section>
+
+<?php
+$total =" SELECT         
+           `id`,
+            `image`, 
+            `imgAlt`, 
+            `lien`
+           FROM
+            `partenaire`
+            
+            ;"; /* on  recupere les donnée id competence intitulé resume dateStart et datefinish de tableau Mysql 'anonce'*/
+$stmt = $pdo->prepare($total);
+$stmt->execute();
+?>
+<h1 class="annonce-titre">ICi c'est la boite a PARRRRRTENAIREEEEEEEEEEEE</h1>
+<section class="container-annonce">
+    <?php while (false !== $row = $stmt->fetch(PDO::FETCH_ASSOC)) :?>
+        <div>
+            <p><?=$row["imgAlt"]?></p>
+            <p><?=$row["image"]?></p>
+            <p><?=$row["lien"]?></p>
+        </div>
+        <a href="partenaire/edit.php?id=<?=$row["id"]?>">modifié</a>
+        <a href="partenaire/delete.php?id=<?=$row["id"]?>">suprimé</a>
+    <?php endwhile;?>
+    </p><a href="partenaire/add.php">ajouter une image pour la boite a image</a>
+</section>
 </body>

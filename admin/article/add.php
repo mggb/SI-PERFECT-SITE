@@ -11,7 +11,7 @@ require_once '../connection.php';
 </head>
 <a href="index.php">retourner vers la page a</a>
     <h2 class="title">ajouter un article :</h2>
-    <form  action="doAdd.php" method="post">
+    <form  action="doAdd.php" method="post" enctype="multipart/form-data">
         <input type="text" name="title" placeholder="title">
         <SELECT name="categorie" size="1">
             <OPTION>journaliste
@@ -29,7 +29,7 @@ require_once '../connection.php';
         <input type="date" name="date" size="12" placeholder="date">
         <input type="text" name="imgAlt" size="12" placeholder="img-alt">
         <input type="text" name="Lieux" size="12" placeholder="Lieux">
-        <input type="text" name="image" size="12" placeholder="img-src">
+        <input type="file" name="image" size="12" placeholder="img-src">
         <input type="text" name="auteur" size="12" placeholder="img-alt">
         <input type="submit" name="submit" value="Envoyer" class="envoie">
     </form>
