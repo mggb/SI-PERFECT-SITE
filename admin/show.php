@@ -118,7 +118,6 @@ $top =" SELECT
             `image`
            FROM
             `top100`
-            
             ;";
 $stmt = $pdo->prepare($top);
 $stmt->execute();
