@@ -120,6 +120,9 @@ require_once 'admin/connection.php';
   $stmt = $pdo->prepare($total);
   $stmt->execute();
   ?>
+  <h2 class="section_title">
+      Les 6 dernier articles.
+  </h2>
   <section class="Articles">
       <h1 class="Articles-header">Articles</h1>
       <div class="Articles-itemContainer">
