@@ -2,27 +2,24 @@
 require_once '../connection.php';
 
 $picture=$_FILES['image']['name'];
-$folder='../img/';
-
-var_dump($_FILES);
-var_dump($_POST);
+$folder='../../img/';
 move_uploaded_file($_FILES['image']['tmp_name'], "$folder".$picture);
 if (!empty($_POST['submit'])) {
-    $addform = "INSERT INTO `top100` 
-      (  
-      `categorie`, 
-      `nom`,
-      `description`, 
-      `lien`, 
-      `note`, 
-      `image`) 
-     VALUES 
+    $addform = "INSERT INTO `top100`
       (
-      :categorie, 
-      :nom, 
+      `categorie`,
+      `nom`,
+      `description`,
+      `lien`,
+      `note`,
+      `image`)
+     VALUES
+      (
+      :categorie,
+      :nom,
       :description,
-      :lien, 
-      :note, 
+      :lien,
+      :note,
       :image);";
 
     $stmt = $pdo->prepare($addform);

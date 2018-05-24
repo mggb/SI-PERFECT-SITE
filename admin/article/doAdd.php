@@ -4,8 +4,7 @@ require_once '../connection.php';
 $picture=$_FILES['image']['name'];
 $folder='../img/';
 
-var_dump($_FILES);
-var_dump($_POST);
+
 move_uploaded_file($_FILES['image']['tmp_name'], "$folder".$picture);
 if (!empty($_POST['submit'])) {
     $addform = "INSERT INTO `article` 
@@ -43,4 +42,4 @@ if (!empty($_POST['submit'])) {
     $stmt->bindValue(':auteur', $_POST['auteur']);
     $stmt->execute();
 }
-//header('Location: ../show.php');
+header('Location: ../show.php');
