@@ -36,8 +36,8 @@ $stmt->execute();
 <section class="container-annonce">
     <?php while (false !== $row = $stmt->fetch(PDO::FETCH_ASSOC)) :?>
         <div>
-            <p><?=$row["title"]?></p>
-            <p><?=$row["image"]?></p>
+            <p>title : <?=$row["title"]?></p>
+            <p>image :<?=$row["image"]?></p>
             <p><?=$row["categorie"]?></p>
             <p><?=$row["SousCategorie"]?></p>
             <p><?=$row["Lieux"]?></p>
@@ -61,7 +61,7 @@ $total =" SELECT
            FROM
             `boiteimage`
             
-            ;"; /* on  recupere les donnée id competence intitulé resume dateStart et datefinish de tableau Mysql 'anonce'*/
+            ;";
 $stmt = $pdo->prepare($total);
 $stmt->execute();
 ?>
@@ -77,5 +77,65 @@ $stmt->execute();
         <a href="adminBoite/delete.php?id=<?=$row["id"]?>">suprimé</a>
     <?php endwhile;?> <!- on ferme la balise php et on fini la condition tant que ->
     </p><a href="adminBoite/add.php">ajouter une image pour la boite a image</a>
+</section>
+
+<?php
+$partenaire =" SELECT         
+           `id`,
+            `image`, 
+            `imgAlt`, 
+            `lien`
+           FROM
+            `partenaire`
+            
+            ;";
+$stmt = $pdo->prepare($partenaire);
+$stmt->execute();
+?>
+<h1 class="annonce-titre">ICi c'est la boite a PARRRRRTENAIREEEEEEEEEEEE</h1>
+<section class="container-annonce">
+    <?php while (false !== $row = $stmt->fetch(PDO::FETCH_ASSOC)) :?>
+        <div>
+            <p><?=$row["imgAlt"]?></p>
+            <p><?=$row["image"]?></p>
+            <p><?=$row["lien"]?></p>
+        </div>
+        <a href="partenaire/edit.php?id=<?=$row["id"]?>">modifié</a>
+        <a href="partenaire/delete.php?id=<?=$row["id"]?>">suprimé</a>
+    <?php endwhile;?>
+    </p><a href="partenaire/add.php">ajouter une image pour la boite a image</a>
+</section>
+
+
+<?php
+$top =" SELECT         
+            `id`,
+            `categorie`, 
+            `nom`, 
+            `description`, 
+            `lien`, 
+            `note`,
+            `image`
+           FROM
+            `top100`
+            ;";
+$stmt = $pdo->prepare($top);
+$stmt->execute();
+?>
+<h1 class="annonce-titre">ICi c'est la boite a TOPPPPPPPPPPPP 100000000000</h1>
+<section class="container-annonce">
+    <?php while (false !== $row = $stmt->fetch(PDO::FETCH_ASSOC)) :?>
+        <div>
+            <p><?=$row["categorie"]?></p>
+            <p><?=$row["nom"]?></p>
+            <p><?=$row["description"]?></p>
+            <p><?=$row["lien"]?></p>
+            <p><?=$row["note"]?></p>
+            <p><?=$row["image"]?></p>
+        </div>
+        <a href="top100/edit.php?id=<?=$row["id"]?>">modifié</a>
+        <a href="top100/delete.php?id=<?=$row["id"]?>">suprimé</a>
+    <?php endwhile;?>
+    </p><a href="top100/add.php">ajouter une image pour la boite a image</a>
 </section>
 </body>

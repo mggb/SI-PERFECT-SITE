@@ -1,6 +1,11 @@
 <?php
 require_once '../connection.php';
 
+$picture=$_FILES['image']['name'];
+$folder='../img/';
+
+
+move_uploaded_file($_FILES['image']['tmp_name'], "$folder".$picture);
 if (!empty($_POST['submit'])) {
     $addform = "INSERT INTO `article` 
       ( 
@@ -33,7 +38,7 @@ if (!empty($_POST['submit'])) {
     $stmt->bindValue(':date', $_POST['date']);
     $stmt->bindValue(':Lieux', $_POST['Lieux']);
     $stmt->bindValue(':imgAlt', $_POST['imgAlt']);
-    $stmt->bindValue(':image', $_POST['image']);
+    $stmt->bindValue(':image', "$folder".$picture);
     $stmt->bindValue(':auteur', $_POST['auteur']);
     $stmt->execute();
 }
