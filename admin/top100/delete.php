@@ -13,17 +13,14 @@ require_once '../connection.php';
 <?php
 $edit =" SELECT         
            `id`, 
-           `title`, 
            `image`, 
-           `categorie`, 
-           `SousCategorie`, 
-           `Lieux`, 
+           `categorie`,  
+           `nom`, 
            `description`, 
-           `auteur`, 
-           `date`, 
-           `imgAlt`
+           `lien`, 
+           `note`
            FROM
-            `article`
+            `top100`
             WHERE
             `id`= :id
             
@@ -35,7 +32,7 @@ $stmt->execute();
 <a href="index.php">retourner vers la page admin</a>
 <a href="../show.php">retourner vers la page show</a>
 <?php if (false !== $row = $stmt->fetch(PDO::FETCH_ASSOC)) :?>
-    tu est sur de vouloir suprimé la page de <?=$row["title"]?>
+    tu est sur de vouloir suprimé la page de <?=$row["nom"]?>
 <form  action="doDelete.php" method="post">
     <input  id="prodId" name="id" type="hidden" value="<?=$row["id"]?>">
     <input type="submit" name="submit" value="Oui" class="envoie">

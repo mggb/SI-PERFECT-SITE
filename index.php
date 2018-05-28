@@ -10,8 +10,8 @@ require_once 'admin/connection.php';
   <link rel="stylesheet" href="./src/css/reset.css">
   <link rel="stylesheet" href="./src/css/index.css">
   <link rel="stylesheet" href="./src/css/flickity.css">
-    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.min.css">
 </head>
 
 <body>
@@ -47,6 +47,9 @@ require_once 'admin/connection.php';
     </div>
 
     <header class="header">
+      <video autoplay muted loop id="video">
+    <source src="./src/video/header-video.mp4" type="video/mp4">
+  </video>
       <div class="header_title_container">
         <p class="header_title">
           Une Année De Voyages
@@ -98,22 +101,22 @@ require_once 'admin/connection.php';
     </div>
   </section>
   <?php
-  $total =" SELECT         
+  $total =" SELECT
            `id`,
-            `title`, 
-            `image`, 
-            `categorie`, 
-            `SousCategorie`, 
-            `Lieux`, 
-            `description`, 
-            `auteur`, 
-            `date`, 
+            `title`,
+            `image`,
+            `categorie`,
+            `SousCategorie`,
+            `Lieux`,
+            `description`,
+            `auteur`,
+            `date`,
             `imgAlt`
            FROM
             `article`
             ORDER BY
             `id`
-            DESC 
+            DESC
             LIMIT
             6
             ;";
@@ -168,14 +171,14 @@ require_once 'admin/connection.php';
     </div>
   </section>
   <?php
-  $partenaire =" SELECT         
+  $partenaire =" SELECT
            `id`,
-            `image`, 
-            `imgAlt`, 
+            `image`,
+            `imgAlt`,
             `lien`
            FROM
             `partenaire`
-            
+
             ;";
   $stmt = $pdo->prepare($partenaire);
   $stmt->execute();

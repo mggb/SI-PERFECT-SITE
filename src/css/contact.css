@@ -79,17 +79,18 @@ textarea {
 }
 
 .contact-infoTitle {
+  margin-bottom: 80px;
   font-size: 2.4rem;
   font-weight: normal;
   font-family: "Playfair Display", serif;
 }
 
 .contact-infoAddress {
-  margin-top: 80px;
+  margin-top: 10px;
 }
 
 .contact-infoTel {
-  margin-top: 80px;
+  margin-top: 10px;
   color: #B9B9B9;
 }
 
@@ -99,7 +100,7 @@ textarea {
 }
 
 .contact-infoMail {
-  margin-top: 80px;
+  margin-top: 10px;
   color: #B9B9B9;
 }
 
@@ -109,12 +110,13 @@ textarea {
 }
 
 .contact-infoHours {
-  margin-top: 80px;
+  margin-top: 10px;
 }
 
 .contact-infoPeople {
-  margin-top: 80px;
+  margin-top: 10px;
   line-height: 1.5;
+  margin-bottom: 20px;
 }
 
 span {
@@ -142,14 +144,6 @@ span {
   color: #50E3C2;
 }
 
-.contact-trait2 {
-  width: 80px;
-  height: 1px;
-  background-color: #50E3C2;
-  margin-top: 25px;
-  margin-left: 50%;
-}
-
 .contact-form {
   width: 100%;
   display: flex;
@@ -160,10 +154,12 @@ span {
 }
 
 .contact-formTitle {
+  margin-bottom: 80px;
   font-size: 2.4rem;
   font-weight: normal;
   font-family: "Playfair Display", serif;
 }
+
 
 .contact-formInputs {
   width: 250px;
@@ -172,13 +168,13 @@ span {
   outline: 0;
   border: 1px solid #50E3C2;
   border-radius: 3px;
-  margin-top: 60px;
+  margin-top: 15px;
 }
 
 .contact-formInput {
   width: 250px;
   padding: 10px;
-  margin-top: 60px;
+  margin-top: 15px;
   height: 100px;
   border: 1px solid #50E3C2;
   border-radius: 3px;
@@ -207,7 +203,7 @@ span {
 
 .menu_section {
   transition: .7s all;
-  z-index: 1;
+  z-index: 3;
   height: 50vh;
   width: 100vw;
   background-color: #FFF;
@@ -273,4 +269,60 @@ span {
 
 #menu-button-open {
   bottom: -30%;
+}
+
+/* FOOTER SECTION */
+
+.footer {
+  margin-top: 100px;
+  width: 100vw;
+}
+
+.footer-title {
+  font-family: "Playfair Display", serif;
+  font-size: 2.4rem;
+  text-align: center;
+}
+
+.footer-imgContainer {
+  margin: 5% 20%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-around;
+}
+
+.footer-img {
+  width: auto;
+  height: auto;
+  margin-top: 15%;
+}
+
+.footer-pages {
+  margin: 10% 30%;
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (min-width:600px) {
+  .footer-pages {
+    margin: 10% 20%;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+.footer-pageLink {
+  text-decoration: none;
+  color: black;
+  font-family: 'Raleway', sans-serif;
+  font-weight: lighter;
+  line-height: 2.5;
+  font-size: 1.4rem;
+}
+
+@media only screen and (min-width:600px) {
+  .footer-pageLink {
+    padding: 10px;
+  }
 }

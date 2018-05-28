@@ -12,7 +12,7 @@ body {
 
 .menu_section {
   transition: .7s all;
-  z-index: 1;
+  z-index: 3;
   height: 50vh;
   width: 100vw;
   background-color: #FFF;
@@ -146,14 +146,19 @@ body {
   justify-content: center;
   font-size: 2.4rem;
   align-items: flex-end;
+  margin-bottom: 10px;
 }
 
 .bluebar {
+  margin-bottom: 50px;
+  width: 100%
   margin-top: 10px;
   width: 80px;
   height: 1px;
   background-color: #50E3C2;
   position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
 }
 
 .carousel-cell {
@@ -172,4 +177,65 @@ body {
 
 .main-carousel {
   z-index: 0;
+}
+
+.magazine {
+  margin-top: 100px;
+}
+
+/* FOOTER SECTION */
+
+.footer {
+  margin-top: 150px;
+  width: 100vw;
+}
+
+.footer-title {
+  font-family: "Playfair Display", serif;
+  font-size: 2.4rem;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.footer-imgContainer {
+  margin: 5% 20%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-around;
+}
+
+.footer-img {
+  width: auto;
+  height: auto;
+  margin-top: 15%;
+}
+
+.footer-pages {
+  margin: 10% 30%;
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (min-width:600px) {
+  .footer-pages {
+    margin: 10% 20%;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+.footer-pageLink {
+  text-decoration: none;
+  color: black;
+  font-family: 'Raleway', sans-serif;
+  font-weight: lighter;
+  line-height: 2.5;
+  font-size: 1.4rem;
+}
+
+@media only screen and (min-width:600px) {
+  .footer-pageLink {
+    padding: 10px;
+  }
 }

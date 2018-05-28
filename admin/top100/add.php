@@ -21,6 +21,7 @@ require_once '../connection.php';
               <OPTION>bar
                 <OPTION>hotel
                   <OPTION>restaurants
+                <OPTION>spa
             </SELECT>
           </div>
           <div class="containInputArticle">
